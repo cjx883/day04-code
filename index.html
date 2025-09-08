@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>学生注册表单</title>
+		<!-- 新 Bootstrap5 核心 CSS 文件 -->
+		<link rel="stylesheet" href="https://cdn.staticfile.net/twitter-bootstrap/5.1.1/css/bootstrap.min.css">
+		 
+		<!-- 最新的 Bootstrap5 核心 JavaScript 文件 -->
+		<script src="https://cdn.staticfile.net/twitter-bootstrap/5.1.1/js/bootstrap.bundle.min.js"></script>
+		<style>
+			#wo{
+				text-align: center;
+			}
+			#phone,#mima,#queren,#youxiang,#nickname{
+				width:450px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<div id="wo">
+				<h1>学生注册表单</h1>
+			</div>
+			
+			<form>
+				<div class="mb-3">
+					姓名*
+					<br>
+					<input id="nickname" placeholder="请输入昵称,3-8个字符,可以是汉字或字母或数字"/>
+				</div>
+				<div class="mb-3">
+					手机号*
+					<br>
+					<input id="phone" placeholder="请输入11位手机号"/>
+				</div>
+				<div class="mb-3">
+					邮箱*
+					<br>
+					<input id="youxiang" placeholder="可选,如:student@school.com"/>
+				</div>
+				<div class="mb-3">
+					密码*
+					<br>
+					<input id ="mima" placeholder="至少六位,包含数字和字母"/>
+				</div>
+				<div class="mb-3">
+					确认密码*
+					<br>
+					<input id="queren" placeholder="请再次输入密码"/>
+				</div>
+				<div class="wode">
+				</div>
+					<input type="button" value="注册" onclick="checkNickname()">
+				</div>
+			</form>
+		</div>
+	</body>
+	<script>
+		function checkNickname(){
+			let nickname = document.getElementById("nickname");
+			let name =/^[A-Za-z0-9\u4e00-\u9fa5]{3,8}$/
+			if(name.test(nickname.value)){
+				
+			}else{
+				alert(nickname.placeholder);
+				return false;
+			}
+			let phone = document.getElementById("phone");
+			let phone1 =/^[0-9]{11}$/
+			if(phone1.test(phone.value)){
+				
+			}else{
+				alert(phone.placeholder);
+				return false;
+			}
+			let youxiang = document.getElementById("youxiang");
+			let youxiang1 =/^(?:|^[A-Za-z0-9_]+@[A-Za-z0-9-]+\.[A-Za-z0-9]+$)$/
+			if(youxiang1.test(youxiang.value)){
+				
+			}else{
+				alert(youxiang.placeholder);
+				return false;
+			}
+			let mima = document.getElementById("mima");
+			let mima1 =/^[A-Za-z0-9]{6,20}$/
+			if(mima1.test(mima.value)){
+				
+			}else{
+				alert(mima.placeholder);
+				return false;
+			}
+			let queren = document.getElementById("queren");
+			let queren1 =/^[A-Za-z0-9]{6,20}$/
+			if(queren.value!=mima.value){
+				alert("两次输入的密码不一致，请重新输入");
+				return false;
+			}else{
+			}
+		}
+	</script>
+</html>
